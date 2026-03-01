@@ -1,0 +1,27 @@
+name: Douyin Auto Fire
+
+on:
+  schedule:
+    - cron: '0 7 * * *'  # 每天北京时间 15:00 自动运行
+  workflow_dispatch:      # 允许你手动点击按钮运行测试
+
+jobs:
+  run-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检查代码
+        uses: actions/checkout@v3
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: 安装依赖
+        run: |
+          pip install requests
+
+      - name: 执行点火脚本
+        env:
+          DOUYIN_COOKIE: ${{ secrets.DOUYIN_COOKIE }}
+        run: python xuhuohua.py
