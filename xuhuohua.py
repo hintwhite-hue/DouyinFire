@@ -19,7 +19,8 @@ def run_fire():
 
     # 模拟点火/签到的接口 (这里仅为示例，如果是特定功能的点火需要替换对应 URL)
     # 注意：纯 API 模式不需要屏幕和鼠标，运行速度极快
-    test_url = "https://www.douyin.com/aweme/v1/web/general/search/" 
+# 换成这个更稳的个人信息接口来测试 Cookie
+test_url = "https://www.douyin.com/aweme/v1/web/user/profile/self/"
 
     print("🚀 正在启动云端点火程序...")
     
