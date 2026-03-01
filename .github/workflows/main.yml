@@ -19,7 +19,7 @@ jobs:
 
       - name: 安装依赖
         run: |
-          pip install requests schedule
+          pip install -r requirements.txt
 
       - name: 执行点火脚本
         env:
